@@ -12,12 +12,12 @@
 
   "FunConfig": {
     "SystemName": "BaoCron System",
-    "Db": "data source=(localdb)\\mssqllocaldb;initial catalog=Hr;integrated security=True;multipleactiveresultsets=True;max pool size=1000;",
+    "Db": "data source=(localdb)\\mssqllocaldb;initial catalog=Bao;integrated security=True;multipleactiveresultsets=True;max pool size=1000;",
     "Locale": "zh-TW",
     "LogSql": "true",
     "LogDebug": "true",
     /* Smtp: 0(Host),1(Port),2(Ssl),3(Id),4(Pwd),5(FromEmail),6(FromName) */
-    "Smtp": "smtp.gmail.com,587,true,xxx@gmail.com,xxx,service@corp.com,Help Desk",
-    "Redis": "127.0.0.1:6379,defaultDatabase=1"
+    "Smtp": "",
+    "Redis": "127.0.0.1:6379,defaultDatabase=0,allowAdmin=true"
   }
 }
