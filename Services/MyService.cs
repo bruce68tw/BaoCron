@@ -10,11 +10,11 @@ namespace BaoCron.Services
         public async Task RunAsync()
         {
             const string preLog = "BaoCron: ";
-            await _Log.InfoAsync(preLog + "Start.");
+            await _Log.InfoA(preLog + "Start.");
 
             #region 1.清除 Redis Cache
             var info = "";
-            await _Redis.FlushDbAsync();
+            await _Redis.FlushDbA();
             #endregion
 
             #region 2.尋寶遊戲上下架
@@ -31,8 +31,8 @@ where LaunchStatus='{LaunchStatusEstr.Yes}'
 and EndTime < getdate()
 and Status=1
 ";
-                var count = await db.ExecSqlAsync(sql);
-                await _Log.InfoAsync("下架 Bao 筆數: " + count);
+                var count = await db.ExecSqlA(sql);
+                await _Log.InfoA("下架 Bao 筆數: " + count);
 
                 //上架
                 sql = $@"
@@ -43,8 +43,8 @@ where LaunchStatus='{LaunchStatusEstr.Doing}'
 and StartTime < getdate()
 and Status=1
 ";
-                count = await db.ExecSqlAsync(sql);
-                await _Log.InfoAsync("上架 Bao 筆數: " + count);
+                count = await db.ExecSqlA(sql);
+                await _Log.InfoA("上架 Bao 筆數: " + count);
 
             }
             #endregion
@@ -54,9 +54,9 @@ and Status=1
             //if (db != null)
             //    await db.DisposeAsync();
             if (info != "")
-                await _Log.InfoAsync(preLog + info);
+                await _Log.InfoA(preLog + info);
 
-            await _Log.InfoAsync(preLog + "End.");
+            await _Log.InfoA(preLog + "End.");
             #endregion
         }
 
