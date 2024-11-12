@@ -1,5 +1,6 @@
 ﻿using BaoCron.Services;
 using Base.Models;
+using Base.Interfaces;
 using Base.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -28,7 +29,7 @@ namespace BaoCron
             var services = new ServiceCollection();
 
             //4.base user info for base component
-            services.AddSingleton<IBaseUserService, BaseUserService>();
+            services.AddSingleton<IBaseUserSvc, BaseUserSvc>();
 
             //5.ado.net for mssql
             services.AddTransient<DbConnection, SqlConnection>();

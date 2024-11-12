@@ -12,7 +12,7 @@
 
   "FunConfig": {
     "SystemName": "BaoCron System",
-    "Db": "data source=(localdb)\\mssqllocaldb;initial catalog=Bao;integrated security=True;multipleactiveresultsets=True;max pool size=1000;",
+    "Db": "data source=.\\SqlExpress;initial catalog=Bao;integrated security=True;multipleactiveresultsets=True;max pool size=1000;",
     "Locale": "zh-TW",
     "LogSql": "true",
     "LogDebug": "true",
